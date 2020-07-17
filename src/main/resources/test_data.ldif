@@ -1,0 +1,56 @@
+dn: dc=example,dc=com
+objectClass: top
+objectClass: domain
+objectClass: extensibleObject
+
+dn: ou=users,dc=example,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: users
+
+dn: ou=groups,dc=example,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: groups
+
+dn: cn=TEST01,ou=users,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: TEST01
+sn: TEST01
+userPassword: $2a$10$1fHlWeEmAvquoMyRWFGxFO0J1NdBEbYIMkl5qYS6M6K8NRXxSfypi
+
+dn: cn=admin,ou=users,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: admin
+sn: admin
+userPassword: $2a$10$1fHlWeEmAvquoMyRWFGxFO0J1NdBEbYIMkl5qYS6M6K8NRXxSfypi
+
+dn: cn=TEST03,ou=users,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: TEST03
+sn: TEST03
+userPassword: $2a$10$1fHlWeEmAvquoMyRWFGxFO0J1NdBEbYIMkl5qYS6M6K8NRXxSfypi
+
+dn: cn=users,ou=groups,dc=example,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: users
+ou: user
+uniqueMember: cn=TEST03,ou=users,dc=example,dc=com
+uniqueMember: cn=TEST01,ou=users,dc=example,dc=com
+
+dn: cn=admins,ou=groups,dc=example,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: admins
+ou: admin
+uniqueMember: cn=admin,ou=users,dc=example,dc=com
